@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minakshi (Tiki) Aunty’s Birthday Celebration</title>
+<style>
+/* ------------------------------------------------------------------ */
+/* CUSTOM FONT DEFINITION (Must be at the top of the CSS)             */
+/* You must ensure the 'WebFont.*' files are in the same directory!   */
+/* ------------------------------------------------------------------ */
+@font-face {
+    font-family: 'MyWebFont';
+    font-weight: normal;
+    font-style: normal;
+    
+    /* Using multiple formats for broad browser compatibility */
+    src: url('WebFont.eot'); /* IE9 compatibility */
+    src: url('WebFont.eot?#iefix') format('embedded-opentype'),
+         url('WebFont.woff2') format('woff2'), 
+         url('WebFont.woff') format('woff'),
+         url('WebFont.ttf') format('truetype'), /* You can substitute this with your Havana.ttf */
+         url('WebFont.svg#webfont') format('svg');
+}
+
+/* ------------------------------------------------------------------ */
+/* GLOBAL & TYPOGRAPHY STYLES                                         */
+/* ------------------------------------------------------------------ */
+body {
+    background-color: #f4f4f9; /* Light, soft background */
+    color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    /* Applying the custom font and fixing the typo */
+    font-family: 'MyWebFont', cursive, sans-serif;
+    font-size: 3em; 
+    color: #e91e63; /* Pink color for a festive look */
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+/* ------------------------------------------------------------------ */
+/* 3D IMAGE SCENE STYLES                                              */
+/* ------------------------------------------------------------------ */
+/* Parent Container: The 3D Scene */
+.scene {
+    /* Establishes the 3D viewing distance */
+    perspective: 1000px;
+    
+    /* Sets a container size */
+    width: 300px;
+    height: 300px;
+    margin: 50px auto; 
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+/* Child Element: The Image */
+.image-box {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    
+    /* Smooth transition for the transform effect */
+    transition: transform 0.6s ease-out;
+    
+    /* Default state: no rotation */
+    transform: rotateX(0deg);
+    
+    /* Prevents the 'back' of the image from being visible during rotation */
+    backface-visibility: hidden;
+}
+
+/* Apply 3D Transform on Hover */
+.scene:hover .image-box {
+    /* Flips the image 180 degrees around the X-axis (forward/backward flip) */
+    transform: rotateX(180deg);
+}
+</style>
+</head>
+<body>
+
+    <h1>Happy Birthday Minakshi Aunty!</h1>
+
+    <div class="scene">
+        <img class="image-box" src="happybirthday.jpg" alt="A stylized image">
+    </div>
+
+    <p>We hope you have a wonderful and joyous day!</p>
+
+</body>
+</html>
